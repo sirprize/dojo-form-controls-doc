@@ -1,0 +1,326 @@
+---
+---
+
+{% assign dijitButtonDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/Button.html' %}
+{% assign dijitCheckboxDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/CheckBox.html' %}
+{% assign dijitRadioDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/RadioButton.html' %}
+{% assign dijitSelectDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/Select.html' %}
+{% assign dijitTextareaDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/SimpleTextarea.html' %}
+{% assign dijitExpandingTextareaDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/Textarea.html' %}
+{% assign dijitTextboxDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/TextBox.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Dijitive - Dojo Dijits For Native Form Controls</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/solarized_dark.min.css">
+        
+        {% if site.env == "dev" %}
+            <link rel="stylesheet" href="../assets/styles/bootstrap-common.css">
+            <link rel="stylesheet" href="../assets/styles/bootstrap-responsive.css">
+            <link rel="stylesheet" href="../assets/styles/bootstrap-docs.css">
+        {% else %}
+            <link rel="stylesheet" href="../_assets/frontend-styles/bootstrap-common.css">
+            <link rel="stylesheet" href="../_assets/frontend-styles/bootstrap-responsive.css">
+            <link rel="stylesheet" href="../_assets/frontend-styles/bootstrap-docs.css">
+        {% endif %}
+        
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+        <!-- Navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button> <a class="brand" href="./index.html">Bootstrap</a>-->
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="">
+                                <a href="http://github.com/sirprize/dijitive">Dijitive on Github</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subhead -->
+        <header class="jumbotron subhead" id="overview">
+            <div class="container">
+                <h1>Dijitive</h1>
+                <p class="lead">Dojo Dijits For Native Form Controls.</p>
+            </div>
+        </header>
+
+        <div class="container">
+
+            <!-- Docs nav -->
+            <div class="row">
+                <div class="span3 bs-docs-sidebar">
+                    <ul class="nav nav-list bs-docs-sidenav">
+                        <!--<li><a href="#intro"><i class="icon-chevron-right"></i> Intro</a></li>-->
+                        <li><a href="#button"><i class="icon-chevron-right"></i> Button</a></li>
+                        <li><a href="#checkbox"><i class="icon-chevron-right"></i> Checkbox</a></li>
+                        <li><a href="#radio"><i class="icon-chevron-right"></i> Radio</a></li>
+                        <li><a href="#select"><i class="icon-chevron-right"></i> Select</a></li>
+                        <li><a href="#textarea"><i class="icon-chevron-right"></i> Textarea</a></li>
+                        <li><a href="#expanding-textarea"><i class="icon-chevron-right"></i> Expanding Textarea</a></li>
+                        <li><a href="#textbox"><i class="icon-chevron-right"></i> Textbox</a></li>
+                    </ul>
+                </div>
+            
+                <div class="span9">
+                    <!-- Intro
+                    <section id="intro">
+                        <div class="page-header">
+                            <h1>dijitive</h1>
+                            <p>Some of the original properties are omitted since they make no sense without using the themes bundled with Dijit (eg <code>iconClass</code> or <code>showLabel</code>)</p>
+                        </div>
+                    </section>
+                    -->
+                    
+                    <!-- Button -->
+                    <section id="button">
+                        <div class="page-header">
+                            <h1>Button</h1>
+                            <p>Representation of a native <code>{{ '<button>' | escape}}</code> element. Same API as <a href="{{ dijitButtonDoc }}">dijit/form/Button</a>.
+                        </div>
+                        
+                        <h3>Programmatic</h3>
+                        <div class="bs-docs-example">
+                            <button id="button1"></button>
+                        </div>
+                        {% capture button_programmatic %}{% include index/button-programmatic.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-javascript">{{ button_programmatic | escape }}</code></pre>
+
+                        <h3>Declarative</h3>
+                        <div class="bs-docs-example">
+                            <button id="button2" class="btn btn-success" data-dojo-type="dijitive/Button">
+                                <i class="icon-music icon-white"></i> La La Laaaa
+                            </button>
+                        </div>
+                        {% capture button_declarative %}{% include index/button-declarative.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-html">{{ button_declarative | escape }}</code></pre>
+                    </section>
+                    
+                    <!-- Checkbox -->
+                    <section id="checkbox">
+                        <div class="page-header">
+                            <h1>Checkbox</h1>
+                            <p>Representation of a native <code>{{ '<input type="checkbox"/>' | escape}}</code> element. Same API as <a href="{{ dijitCheckboxDoc }}">dijit/form/CheckBox</a>.</p>
+                        </div>
+
+                        <h3>Programmatic</h3>
+                        <div class="bs-docs-example">
+                            <input type="checkbox" id="checkbox1"/>
+                        </div>
+                        {% capture checkbox_programmatic %}{% include index/checkbox-programmatic.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-javascript">{{ checkbox_programmatic | escape }}</code></pre>
+
+                        <h3>Declarative</h3>
+                        <div class="bs-docs-example">
+                            <input id="checkbox2" type="checkbox" name="extraCheese" value="on" data-dojo-type="dijitive/Checkbox"/>
+                        </div>
+                        {% capture checkbox_declarative %}{% include index/checkbox-declarative.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-html">{{ checkbox_declarative | escape }}</code></pre>
+                    </section>
+                    
+                    <!-- Radio -->
+                    <section id="radio">
+                        <div class="page-header">
+                            <h1>Radio</h1>
+                            <p>Representation of a native <code>{{ '<input type="radio"/>' | escape}}</code> element. Same API as <a href="{{ dijitRadioDoc }}">dijit/form/RadioButton</a>.</p>
+                        </div>
+
+                        <h3>Programmatic</h3>
+                        <div class="bs-docs-example">
+                            <input type="radio" id="radio1"/>
+                            <input type="radio" id="radio2"/>
+                        </div>
+                        {% capture radio_programmatic %}{% include index/radio-programmatic.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-javascript">{{ radio_programmatic | escape }}</code></pre>
+
+                        <h3>Declarative</h3>
+                        <div class="bs-docs-example">
+                            <input id="radio3" type="radio" name="s" value="large" data-dojo-type="dijitive/Radio"/>
+                            <input id="radio4" type="radio" name="s" value="samll" checked="checked" data-dojo-type="dijitive/Radio"/>
+                        </div>
+                        {% capture radio_declarative %}{% include index/radio-declarative.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-html">{{ radio_declarative | escape }}</code></pre>
+                    </section>
+                    
+                    <!-- Select -->
+                    <section id="select">
+                        <div class="page-header">
+                            <h1>Select</h1>
+                            <p>Representation of a native <code>{{ '<select>' | escape}}</code> element. Same API as <a href="{{ dijitSelectDoc }}">dijit/form/Select</a>.</p>
+                        </div>
+
+                        <h3>Programmatic</h3>
+                        
+                        <div class="bs-docs-example">
+                            <form><select id="select1"></select></form>
+                        </div>
+                        {% capture select_programmatic %}{% include index/select-programmatic-single.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-javascript">{{ select_programmatic | escape }}</code></pre>
+                        
+                        <div class="bs-docs-example">
+                            <select id="select2"></select>
+                        </div>
+                        {% capture select_programmatic %}{% include index/select-programmatic-multiple.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-javascript">{{ select_programmatic | escape }}</code></pre>
+                        
+                        <h3>Declarative</h3>
+                        <div class="bs-docs-example">
+                            <select id="select3" name="meal3" data-dojo-type="dijitive/Select" required="true">
+                                <option value="">Please select</option>
+                                <option value="steak-and-lobster">Steak &amp; Lobster</option>
+                                <option value="clam-chowder" selected="selected">Clam Chowder</option>
+                                <option value="pizza" disabled="true">Pizza</option>
+                                <option value="pasta">Pasta</option>
+                            </select>
+                        </div>
+                        {% capture select_declarative %}{% include index/select-declarative-single.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-html">{{ select_declarative | escape }}</code></pre>
+                        
+                        <div class="bs-docs-example">
+                            <select id="select4" name="meal4" multiple="true" data-dojo-type="dijitive/Select" required="true">
+                                <option value="">Please select</option>
+                                <option value="steak-and-lobster" selected="selected">Steak &amp; Lobster</option>
+                                <option value="clam-chowder" selected="selected">Clam Chowder</option>
+                                <option value="pizza" disabled="true">Pizza</option>
+                                <option value="pasta">Pasta</option>
+                            </select>
+                        </div>
+                        {% capture select_declarative %}{% include index/select-declarative-multiple.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-html">{{ select_declarative | escape }}</code></pre>
+                    </section>
+                    
+                    <!-- Textarea -->
+                    <section id="textarea">
+                        <div class="page-header">
+                            <h1>Textarea</h1>
+                            <p>Representation of a native <code>{{ '<textarea>' | escape}}</code> element. Same API as <a href="{{ dijitTextareaDoc }}">dijit/form/SimpleTextarea</a>.</p>
+                        </div>
+
+                        <h3>Programmatic</h3>
+                        <div class="bs-docs-example">
+                            <textarea id="textarea1"></textarea>
+                        </div>
+                        {% capture textarea_programmatic %}{% include index/textarea-programmatic.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-javascript">{{ textarea_programmatic | escape }}</code></pre>
+
+                        <h3>Declarative</h3>
+                        <div class="bs-docs-example">
+                            <textarea id="textarea2" name="note" propercase="true" data-dojo-type="dijitive/Textarea"></textarea>
+                        </div>
+                        {% capture textarea_declarative %}{% include index/textarea-declarative.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-html">{{ textarea_declarative | escape }}</code></pre>
+                    </section>
+                    
+                    <!-- ExpandingTextarea -->
+                    <section id="expanding-textarea">
+                        <div class="page-header">
+                            <h1>ExpandingTextarea</h1>
+                            <p>Representation of a native <code>{{ '<textarea>' | escape}}</code> element. Same API as <a href="{{ dijitExpandingTextareaDoc }}">dijit/form/Textarea</a>.</p>
+                        </div>
+
+                        <h3>Programmatic</h3>
+                        <div class="bs-docs-example">
+                            <textarea id="expandingTextarea1"></textarea>
+                        </div>
+                        {% capture expanding_textarea_programmatic %}{% include index/expanding-textarea-programmatic.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-javascript">{{ expanding_textarea_programmatic | escape }}</code></pre>
+
+                        <h3>Declarative</h3>
+                        <div class="bs-docs-example">
+                            <textarea id="expandingTextarea2" name="note" propercase="true" data-dojo-type="dijitive/ExpandingTextarea"></textarea>
+                        </div>
+                        {% capture expanding_textarea_declarative %}{% include index/expanding-textarea-declarative.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-html">{{ expanding_textarea_declarative | escape }}</code></pre>
+                    </section>
+                    
+                    <!-- Textbox -->
+                    <section id="textbox">
+                        <div class="page-header">
+                            <h1>Textbox</h1>
+                            <p>Representation of a native <code>{{ '<input type="text">' | escape}}</code> element. Same API as <a href="{{ dijitTextboxDoc }}">dijit/form/TextBox</a>.</p>
+                        </div>
+
+                        <h3>Programmatic</h3>
+                        <div class="bs-docs-example">
+                            <input type="text" id="textbox1"/>
+                        </div>
+                        {% capture textbox_programmatic %}{% include index/textbox-programmatic.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-javascript">{{ textbox_programmatic | escape }}</code></pre>
+
+                        <h3>Declarative</h3>
+                        <div class="bs-docs-example">
+                            <input type="text" id="textbox2" name="title" propercase="true" data-dojo-type="dijitive/Textbox"/>
+                        </div>
+                        {% capture textbox_declarative %}{% include index/textbox-declarative.html %}{% endcapture %}
+                        <pre class="prettyprint linenums"><code class="language-html">{{ textbox_declarative | escape }}</code></pre>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p>Big thanks go out to the <a href="http://dojotoolkit.org">Dojo community</a> and the <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap crew</a></p>
+                <p>dijitive has been written by <a href="http://sirprize.me">Sir Prize</a> and it is released under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.</p>
+                <p>This project is hosted on <a href="http://github.com/sirprize/dijitive">Github</a> and this documentation has been generated with <a href="http://github.com/sirprize/dijitive-website-generator">dijitive-website-generator</a></p>
+                {% comment %}
+                <ul class="footer-links">
+                    <li><a href="">aaa</a></li>
+                    <li><a href="">bbb</a></li>
+                </ul>
+                {% endcomment %}
+            </div>
+        </footer>
+        
+        <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+        
+        {% if site.env == "dev" %}
+            <script type="text/javascript" src="../assets/scripts/config.js"></script>
+            <script type="text/javascript" src="../assets/vendor/dojo/dojo/dojo.js"></script>
+            <script type="text/javascript" src="../assets/scripts/index.js"></script>
+        {% else %}
+            <script type="text/javascript" data-dojo-config="async: true, parseOnLoad: true" src="../_assets/dojo/dojo.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/event.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/promise.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/browser.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/ajax.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/dom-common.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/dom-extra.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/widget-common.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/widget-extra.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/form-click.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/form-select.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/layer/form-text.js"></script>
+            <script type="text/javascript" src="../_assets/frontend/index.js"></script>
+        {% endif %}
+        
+        <script>/* Google Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-35397940-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        End Google Analytics */</script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+require(["dijitive/Textarea"], function (Textarea) {
+    var textarea1 = new Textarea({
+        name: 'note',
+        autocomplete: false,
+        uppercase: true,
+        trim: true,
+        onKeyPress: function (ev) {
+            console.info('key pressed')
+        }
+    }, 'textarea1');
+
+    textarea1.startup();
+    
+    textarea1.watch('value', function (name, oldVal, val) {
+        console.info('New value is "' + val);
+    });
+});

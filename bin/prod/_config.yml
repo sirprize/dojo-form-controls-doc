@@ -1,0 +1,7 @@
+safe:           false
+source:         ../../html
+destination:    ../../_production
+include:        ['.nojekyll']
+
+# custom vars
+env:            prod

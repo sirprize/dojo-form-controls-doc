@@ -1,0 +1,13 @@
+require(["dijitive/Radio"], function (Radio) {
+    var radio = new Radio({
+        name: 'size',
+        value: 'large',
+        checked: true,
+        onChange: function (e) {
+            // value is false when unchecked
+            console.info('value is: ' + this.get('value'));
+        }
+    }, 'radio');
+    
+    radio.startup();
+});

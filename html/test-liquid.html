@@ -1,0 +1,56 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>dijitive</title>
+        <link rel="stylesheet" href="../assets/styles/bootstrap-common.css">
+        <link rel="stylesheet" href="../assets/styles/bootstrap-responsive.css">
+        <link rel="stylesheet" href="../assets/styles/bootstrap-docs.css">
+    </head>
+
+    <body>
+        {% comment %}This is a comment{% endcomment %}
+        
+        {% include header.html %}
+        
+        {% if site.env == "dev" %}
+            This is dev
+        {% else %}
+            This is prod
+        {% endif %}
+        
+        <h2>{{ site.env }}</h2>
+        <h2>{{ site.xxx | downcase }}</h2>
+        
+        <section id="code">
+            <div class="page-header">
+                <h1>Code</h1>
+            </div>
+            
+            <h2>Inline</h2>
+            
+            <h3><code>&lt;small&gt;</code></h3>
+
+            <p>For de-emphasizing inline or blocks of text, <small>use the small tag.</small></p>
+            <div class="bs-docs-example">
+                <p><small>This line of text is meant to be treated as fine print.</small></p>
+            </div>
+
+            <pre class="prettyprint">
+            &lt;p&gt;
+              &lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;
+            &lt;/p&gt;
+            </pre>
+        </section>
+        
+        <div class="container">
+            <h1>dijitive</h1>
+        </div>
+        
+        <script type="text/javascript" src="../assets/scripts/config.js"></script>
+        <script type="text/javascript" src="../assets/vendor/dojo/dojo/dojo.js"></script>
+    </body>
+</html>

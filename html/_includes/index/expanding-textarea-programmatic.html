@@ -1,0 +1,17 @@
+require(["dijitive/ExpandingTextarea"], function (ExpandingTextarea) {
+    var expandingTextarea1 = new ExpandingTextarea({
+        name: 'note',
+        autocomplete: false,
+        uppercase: true,
+        trim: true,
+        onKeyPress: function (ev) {
+            console.info('key pressed')
+        }
+    }, 'expandingTextarea1');
+
+    expandingTextarea1.startup();
+    
+    expandingTextarea1.watch('value', function (name, oldVal, val) {
+        console.info('New value is "' + val);
+    });
+});

@@ -1,0 +1,13 @@
+require(["dijitive/Button"], function (Button) {
+    var button1 = new Button({
+        type: 'submit',
+        'class': 'btn btn-primary',
+        label: '<i class="icon-music icon-white"></i> La La Laaaa',
+        onClick: function (e) {
+            console.info('clicked?');
+            return false;
+        }
+    }, 'button1');
+
+    button1.startup();
+});

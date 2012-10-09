@@ -1,0 +1,29 @@
+require(["dijitive/Select"], function (Select) {
+    var options = [
+        { value: '', label: 'Please select' },
+        { value: "steak-and-lobster", label: "Steak & Lobster" },
+        { value: "clam-chowder", label: "Clam chowder" },
+        { value: "pizza", label: "Pizza", disabled: true },
+        { value: "pasta", label: "Pasta" }
+    ];
+    
+    var select1 = new Select({
+        name: 'meal1',
+        value: 'pasta',
+        options: options,
+        required: true,
+        onChange: function (value) {
+            console.info('select.onChange(): ' + value)
+        }
+    }, 'select1');
+    
+    select1.watch('value', function (prop, oldVal, val) {
+        console.info('select.watch("value")', prop, oldVal, val);
+    });
+    
+    select1.watch('message', function (prop, oldVal, val) {
+        console[(val) ? 'error' : 'info']('select.watch("message"):', val);
+    });
+    
+    select1.startup();
+});
