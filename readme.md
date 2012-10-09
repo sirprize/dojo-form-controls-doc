@@ -80,3 +80,7 @@ All the root dirs starting with an underscore contain generated files - do not e
 
 + [jekyll](https://github.com/mojombo/jekyll)
 + [phing](http://www.phing.info/)
+
+## License
+
+dijitive-website-generator is released under the MIT license
