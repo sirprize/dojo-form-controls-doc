@@ -8,10 +8,6 @@ require([
     "dijitive/Textarea",
     "dijitive/ExpandingTextarea",
     "dijitive/Textbox",
-    "dijit/registry",
-    "dojo/dom-geometry",
-    "dojo/ready",
-    "dojo/on",
     "dojo/query",
     "dojo/parser",
     "dojo/domReady!"
@@ -25,10 +21,6 @@ require([
     Textarea,
     ExpandingTextarea,
     Textbox,
-    registry,
-    geom,
-    ready,
-    on,
     query,
     parser
 ) {
@@ -45,16 +37,6 @@ require([
             bottom: 270
         }
     });
-    /*
-    new Affix(query('.bs-docs-sidenav')[0], {
-        offset: {
-            top: function () {
-                return document.width <= 980 ? 245 : 195;
-            },
-            bottom: 270
-        }
-    });
-    */
     
     // button section
     var button1 = new Button({
@@ -68,12 +50,7 @@ require([
     }, 'button1');
 
     button1.startup();
-    
-    registry.byId('button2').onClick = function (ev) {
-        console.info('Clicked');
-        return false;
-    }
-    
+
     // checkbox section
     var checkbox1 = new Checkbox({
         name: 'menu',
@@ -86,12 +63,7 @@ require([
     }, 'checkbox1');
     
     checkbox1.startup();
-    
-    registry.byId('checkbox2').onChange = function (ev) {
-        // Value is false when unchecked
-        console.info('New value is: ' + this.get('value'));
-    }
-    
+
     // radio section
     var radio1 = new Radio({
         name: 'size',
@@ -115,17 +87,7 @@ require([
     }, 'radio2');
     
     radio2.startup();
-    
-    registry.byId('radio3').onChange = function (ev) {
-        // Value is false when unchecked
-        console.info('New value is: ' + this.get('value'));
-    }
-    
-    registry.byId('radio4').onChange = function (ev) {
-        // Value is false when unchecked
-        console.info('New value is: ' + this.get('value'));
-    }
-    
+
     // select section
     var options = [
         { value: '', label: 'Please select' },
@@ -175,33 +137,7 @@ require([
     });
     
     select2.startup();
-    
-    ready(function () {
-        registry.byId('select3').onChange = function (value) {
-            console.info('select.onChange(): ' + value)
-        };
 
-        registry.byId('select3').watch('value', function (prop, oldVal, val) {
-            console.info('select.watch("value")', prop, oldVal, val);
-        });
-
-        registry.byId('select3').watch('message', function (prop, oldVal, val) {
-            console[(val) ? 'error' : 'info']('select.watch("message"):', val);
-        });
-
-        registry.byId('select4').onChange = function (value) {
-            console.info('select.onChange(): ' + value)
-        };
-
-        registry.byId('select4').watch('value', function (prop, oldVal, val) {
-            console.info('select.watch("value")', prop, oldVal, val);
-        });
-
-        registry.byId('select4').watch('message', function (prop, oldVal, val) {
-            console[(val) ? 'error' : 'info']('select.watch("message"):', val);
-        });
-    });
-    
     // textarea
     var textarea1 = new Textarea({
         name: 'note',
@@ -218,17 +154,7 @@ require([
     textarea1.watch('value', function (name, oldVal, val) {
         console.info('New value is "' + val);
     });
-    
-    ready(function () {
-        registry.byId('textarea2').onKeyPress = function (ev) {
-            console.info('Key pressed')
-        };
-        
-        registry.byId('textarea2').watch('value', function (prop, oldVal, val) {
-            console.info('select.watch("value")', prop, oldVal, val);
-        });
-    });
-    
+
     // expanding textarea
     var expandingTextarea1 = new ExpandingTextarea({
         name: 'note',
@@ -245,17 +171,7 @@ require([
     expandingTextarea1.watch('value', function (name, oldVal, val) {
         console.info('New value is "' + val);
     });
-    
-    ready(function () {
-        registry.byId('expandingTextarea2').onKeyPress = function (ev) {
-            console.info('Key pressed')
-        };
-        
-        registry.byId('expandingTextarea2').watch('value', function (prop, oldVal, val) {
-            console.info('select.watch("value")', prop, oldVal, val);
-        });
-    });
-    
+
     // textbox
     var textbox1 = new Textbox({
         name: 'title',
@@ -272,15 +188,5 @@ require([
     
     textbox1.watch('value', function (name, oldVal, val) {
         console.info('New value is "' + val);
-    });
-    
-    ready(function () {
-        registry.byId('textbox2').onKeyPress = function (ev) {
-            console.info('Key pressed')
-        };
-        
-        registry.byId('textbox2').watch('value', function (prop, oldVal, val) {
-            console.info('select.watch("value")', prop, oldVal, val);
-        });
     });
 });

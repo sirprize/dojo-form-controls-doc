@@ -1,4 +1,14 @@
-<input type="text" id="textbox2" name="title" propercase="true" data-dojo-type="dijitive/Textbox"/>
+<script>
+    var textboxOnKeyPress = function (ev) {
+        console.info('Key pressed')
+    }
+    
+    var textboxOnChange = function (value) {
+        console.info('select.onChange(): ' + value)
+    }
+</script>
+
+<input type="text" name="title" data-dojo-type="dijitive/Textbox" data-dojo-props="onKeyPress: textboxOnKeyPress, onChange: textboxOnChange, propercase: true"/>
 
 <script>
     require(["dijitive/Textbox", "dojo/parser"]);

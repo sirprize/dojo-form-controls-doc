@@ -1,4 +1,18 @@
-<input id="radio3" type="radio" name="s" value="large" data-dojo-type="dijitive/Radio"/>
+<script>
+    var radio1OnChange = function (ev) {
+        console.info('New value is: ' + this.get('value'));
+    }
+</script>
+
+<input type="radio" name="s" value="large" data-dojo-type="dijitive/Radio" data-dojo-props="onChange: radio1OnChange"/>
+
+<script>
+    var radio2OnChange = function (ev) {
+        console.info('New value is: ' + this.get('value'));
+    }
+</script>
+
+<input type="radio" name="s" value="small" checked="checked" data-dojo-type="dijitive/Radio" data-dojo-props="onChange: radio2OnChange"/>
 
 <script>
     require(["dijitive/Radio", "dojo/parser"]);

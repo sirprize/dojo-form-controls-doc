@@ -1,4 +1,10 @@
-<button id="button2" class="btn btn-success" data-dojo-type="dijitive/Button">
+<script>
+    var buttonOnClick = function (ev) {
+        console.info('Clicked');
+    }
+</script>
+
+<button class="btn btn-success" data-dojo-type="dijitive/Button" data-dojo-props="onClick: buttonOnClick">
     <i class="icon-music icon-white"></i> La La Laaaa
 </button>
 
