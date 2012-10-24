@@ -1,15 +1,15 @@
-# dijitive-website-generator
+# dijitive-doc-generator
 
-Static website generator infrastructure for the dijitive project - [http://sirprize.github.com/dijitive](http://sirprize.github.com/dijitive)
+Static documentation generator infrastructure for the dijitive project - [http://sirprize.github.com/dijitive](http://sirprize.github.com/dijitive)
 
 ## Information
 
-While the purpose of this project is the generation of the dijitive website, its structure and workflow is well suited for any static Dojo-based website.
+While the purpose of this project is the generation of the dijitive documentation, its structure and workflow is well suited for any static Dojo-based website.
 
 ## Getting Started
 
-+ `git clone https://github.com/sirprize/dijitive-website-generator`
-+ `cd dijitive-website-generator`
++ `git clone https://github.com/sirprize/dijitive-doc-generator`
++ `cd dijitive-doc-generator`
 + `git submodule init`
 + `git submodule update`
 + `cd bin/deploy`
@@ -73,7 +73,7 @@ All the root dirs starting with an underscore contain generated files - do not e
 + [dojo/dijit](http://github.com/dojo/dijit)
 + [dojo/util](http://github.com/dojo/util)
 + [twitter/bootstrap](http://github.com/twitter/bootstrap.git)
-+ [xsokev/Dojo-Bootstrap](http://github.com/xsokev/Dojo-Bootstrap)
++ [sirprize/dobolo](http://github.com/sirprize/dobolo.git)
 + [sirprize/dijitive](http://github.com/sirprize/dijitive.git)
 
 ## Requirements
@@ -83,4 +83,4 @@ All the root dirs starting with an underscore contain generated files - do not e
 
 ## License
 
-dijitive-website-generator is released under the MIT license
+dijitive-doc-generator is released under the [MIT license](http://opensource.org/licenses/mit-license.php)

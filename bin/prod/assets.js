@@ -108,7 +108,7 @@ var profile = {
         { name: "dojo", location: "../../assets/vendor/dojo/dojo" },
         { name: "dijit", location: "../../assets/vendor/dojo/dijit" },
         { name: "dijitive", location: "../../assets/vendor/sirprize/dijitive" },
-        { name: "dojo-bootstrap", location: "../../assets/vendor/xsokev/Dojo-Bootstrap" },
+        { name: "dobolo", location: "../../assets/vendor/sirprize/dobolo" },
         { name: "frontend", location: "../../assets/scripts" },
         { name: "frontend-styles", location: "../../assets/styles" }
     ],
@@ -256,7 +256,8 @@ var profile = {
         },
         "frontend/index": {
             include: [
-                "dojo-bootstrap/Affix"
+                "dobolo/Affix",
+                "dobolo/Scrollspy"
             ],
             exclude: baseStuff
         }

@@ -13,6 +13,6 @@
 [submodule "assets/vendor/sirprize/dijitive"]
 	path = assets/vendor/sirprize/dijitive
 	url = git://github.com/sirprize/dijitive.git
-[submodule "assets/vendor/xsokev/Dojo-Bootstrap"]
-	path = assets/vendor/xsokev/Dojo-Bootstrap
-	url = git://github.com/xsokev/Dojo-Bootstrap.git
+[submodule "assets/vendor/sirprize/dobolo"]
+	path = assets/vendor/sirprize/dobolo
+	url = git://github.com/sirprize/dobolo.git

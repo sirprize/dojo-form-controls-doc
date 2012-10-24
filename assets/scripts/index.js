@@ -1,6 +1,6 @@
 require([
-    "dojo-bootstrap/Affix",
-    //"dojo-bootstrap/Scrollspy",
+    "dobolo/Affix",
+    "dobolo/Scrollspy",
     "dijitive/Button",
     "dijitive/Checkbox",
     "dijitive/Radio",
@@ -8,12 +8,13 @@ require([
     "dijitive/Textarea",
     "dijitive/ExpandingTextarea",
     "dijitive/Textbox",
+    "dojo/_base/window",
     "dojo/query",
     "dojo/parser",
     "dojo/domReady!"
 ], function (
     Affix,
-    //Scrollspy,
+    Scrollspy,
     Button,
     Checkbox,
     Radio,
@@ -21,6 +22,7 @@ require([
     Textarea,
     ExpandingTextarea,
     Textbox,
+    baseWin,
     query,
     parser
 ) {
@@ -29,14 +31,18 @@ require([
     parser.parse();
     hljs.initHighlightingOnLoad();
     
-    query('.bs-docs-sidenav').affix({
-        offset: {
-            top: function () {
-                return document.width <= 980 ? 245 : 195;
-            },
-            bottom: 270
+    var affix = new Affix({
+        offsetTop: function () {
+            return document.width <= 980 ? 245 : 195;
         }
-    });
+    }, query('.bs-docs-sidenav')[0]);
+    
+    var scrollSpy = new Scrollspy({
+        targetSelector: '.bs-docs-sidenav',
+        offsetNodeSelector: 'section.spy',
+        offsetTop: 70,
+        wait: 50
+    }, baseWin.body());
     
     // button section
     var button1 = new Button({

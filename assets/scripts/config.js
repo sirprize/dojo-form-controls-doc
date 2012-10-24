@@ -4,7 +4,7 @@ var dojoConfig = {
     parseOnLoad: true,
     packages: [
         { name: "dijitive", location: "../../sirprize/dijitive" },
-        { name: "dojo-bootstrap", location: "../../xsokev/Dojo-Bootstrap" },
+        { name: "dobolo", location: "../../sirprize/dobolo" },
         { name: "frontend", location: "../../../scripts" }
     ]
 };
