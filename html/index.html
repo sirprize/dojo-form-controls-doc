@@ -17,40 +17,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/solarized_dark.min.css">
-        
-        {% if site.env == "dev" %}
-            <link rel="stylesheet" href="../assets/styles/bootstrap-common.css">
-            <link rel="stylesheet" href="../assets/styles/bootstrap-responsive.css">
-            <link rel="stylesheet" href="../assets/styles/bootstrap-docs.css">
-        {% else %}
-            <link rel="stylesheet" href="../_assets/frontend-styles/bootstrap-common.css">
-            <link rel="stylesheet" href="../_assets/frontend-styles/bootstrap-responsive.css">
-            <link rel="stylesheet" href="../_assets/frontend-styles/bootstrap-docs.css">
-        {% endif %}
-        
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        {% include styles.html %}
+        {% include html5shim.html %}
     </head>
 
     <body>
-
-        <!-- Navbar -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button> <a class="brand" href="./index.html">Bootstrap</a>-->
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="">
-                                <a href="http://github.com/sirprize/dijitive">Dijitive on Github</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include navbar.html %}
 
         <!-- Subhead -->
         <header class="jumbotron subhead" id="overview">
@@ -86,16 +58,16 @@
                         </div>
                         
                         <div class="bs-docs-example">
-                            {% include index/button-declarative.html %}
+                            {% include index/button.html %}
                         </div>
                         
                         <h3>Declarative</h3>
-                        {% capture button_declarative %}{% include index/button-declarative.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-html">{{ button_declarative | escape }}</code></pre>
+                        {% capture snippet %}{% include index/button.html %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                         
                         <h3>Programmatic</h3>
-                        {% capture button_programmatic %}{% include index/button-programmatic.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-javascript">{{ button_programmatic | escape }}</code></pre>
+                        {% capture snippet %}{% include index/button.js %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                     </section>
                     
                     <!-- Checkbox -->
@@ -106,16 +78,16 @@
                         </div>
                         
                         <div class="bs-docs-example">
-                            {% include index/checkbox-declarative.html %}
+                            {% include index/checkbox.html %}
                         </div>
                         
                         <h3>Declarative</h3>
-                        {% capture checkbox_declarative %}{% include index/checkbox-declarative.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-html">{{ checkbox_declarative | escape }}</code></pre>
+                        {% capture snippet %}{% include index/checkbox.html %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
 
                         <h3>Programmatic</h3>
-                        {% capture checkbox_programmatic %}{% include index/checkbox-programmatic.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-javascript">{{ checkbox_programmatic | escape }}</code></pre>
+                        {% capture snippet %}{% include index/checkbox.js %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                     </section>
                     
                     <!-- Radio -->
@@ -126,16 +98,16 @@
                         </div>
                         
                         <div class="bs-docs-example">
-                            {% include index/radio-declarative.html %}
+                            {% include index/radio.html %}
                         </div>
                         
                         <h3>Declarative</h3>
-                        {% capture radio_declarative %}{% include index/radio-declarative.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-html">{{ radio_declarative | escape }}</code></pre>
+                        {% capture snippet %}{% include index/radio.html %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                         
                         <h3>Programmatic</h3>
-                        {% capture radio_programmatic %}{% include index/radio-programmatic.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-javascript">{{ radio_programmatic | escape }}</code></pre>
+                        {% capture snippet %}{% include index/radio.js %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                     </section>
                     
                     <!-- Select -->
@@ -146,28 +118,28 @@
                         </div>
                         
                         <div class="bs-docs-example">
-                            {% include index/select-declarative-single.html %}
+                            {% include index/select-single.html %}
                         </div>
                         
                         <h3>Declarative</h3>
-                        {% capture select_declarative %}{% include index/select-declarative-single.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-html">{{ select_declarative | escape }}</code></pre>
+                        {% capture snippet %}{% include index/select-single.html %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
 
                         <h3>Programmatic</h3>
-                        {% capture select_programmatic %}{% include index/select-programmatic-single.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-javascript">{{ select_programmatic | escape }}</code></pre>
+                        {% capture snippet %}{% include index/select-single.js %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                         
                         <div class="bs-docs-example">
-                            {% include index/select-declarative-multiple.html %}
+                            {% include index/select-multiple.html %}
                         </div>
                         
                         <h3>Declarative</h3>
-                        {% capture select_declarative %}{% include index/select-declarative-multiple.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-html">{{ select_declarative | escape }}</code></pre>
+                        {% capture snippet %}{% include index/select-multiple.html %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
 
                         <h3>Programmatic</h3>
-                        {% capture select_programmatic %}{% include index/select-programmatic-multiple.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-javascript">{{ select_programmatic | escape }}</code></pre>
+                        {% capture snippet %}{% include index/select-multiple.js %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                     </section>
                     
                     <!-- Textarea -->
@@ -178,16 +150,16 @@
                         </div>
                         
                         <div class="bs-docs-example">
-                            {% include index/textarea-declarative.html %}
+                            {% include index/textarea.html %}
                         </div>
                         
                         <h3>Declarative</h3>
-                        {% capture textarea_declarative %}{% include index/textarea-declarative.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-html">{{ textarea_declarative | escape }}</code></pre>
+                        {% capture snippet %}{% include index/textarea.html %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
 
                         <h3>Programmatic</h3>
-                        {% capture textarea_programmatic %}{% include index/textarea-programmatic.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-javascript">{{ textarea_programmatic | escape }}</code></pre>
+                        {% capture snippet %}{% include index/textarea.js %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                     </section>
                     
                     <!-- ExpandingTextarea -->
@@ -198,16 +170,16 @@
                         </div>
                         
                         <div class="bs-docs-example">
-                            {% include index/expanding-textarea-declarative.html %}
+                            {% include index/expanding-textarea.html %}
                         </div>
                         
                         <h3>Declarative</h3>
-                        {% capture expanding_textarea_declarative %}{% include index/expanding-textarea-declarative.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-html">{{ expanding_textarea_declarative | escape }}</code></pre>
+                        {% capture snippet %}{% include index/expanding-textarea.html %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
 
                         <h3>Programmatic</h3>
-                        {% capture expanding_textarea_programmatic %}{% include index/expanding-textarea-programmatic.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-javascript">{{ expanding_textarea_programmatic | escape }}</code></pre>
+                        {% capture snippet %}{% include index/expanding-textarea.js %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                     </section>
                     
                     <!-- Textbox -->
@@ -218,69 +190,23 @@
                         </div>
                         
                         <div class="bs-docs-example">
-                            {% include index/textbox-declarative.html %}
+                            {% include index/textbox.html %}
                         </div>
                         
                         <h3>Declarative</h3>
-                        {% capture textbox_declarative %}{% include index/textbox-declarative.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-html">{{ textbox_declarative | escape }}</code></pre>
+                        {% capture snippet %}{% include index/textbox.html %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
 
                         <h3>Programmatic</h3>
-                        {% capture textbox_programmatic %}{% include index/textbox-programmatic.html %}{% endcapture %}
-                        <pre class="prettyprint linenums"><code class="language-javascript">{{ textbox_programmatic | escape }}</code></pre>
+                        {% capture snippet %}{% include index/textbox.js %}{% endcapture %}
+                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                     </section>
                 </div>
             </div>
         </div>
         
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <p class="pull-right"><a href="#">Back to top</a></p>
-                <p>Big thanks go out to the <a href="http://dojotoolkit.org">Dojo community</a> and the <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap crew</a></p>
-                <p>dijitive is written by <a href="http://sirprize.me">Sir Prize</a> and it is released under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.</p>
-                <p>This project is hosted on <a href="http://github.com/sirprize/dijitive">Github</a> and this documentation has been generated with <a href="http://github.com/sirprize/dijitive-doc-generator">dijitive-doc-generator</a></p>
-                {% comment %}
-                <ul class="footer-links">
-                    <li><a href="">aaa</a></li>
-                    <li><a href="">bbb</a></li>
-                </ul>
-                {% endcomment %}
-            </div>
-        </footer>
-        
-        <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
-        
-        {% if site.env == "dev" %}
-            <script type="text/javascript" src="../assets/scripts/config.js"></script>
-            <script type="text/javascript" src="../assets/vendor/dojo/dojo/dojo.js"></script>
-            <script type="text/javascript" src="../assets/scripts/index.js"></script>
-        {% else %}
-            <script type="text/javascript" data-dojo-config="async: true, parseOnLoad: true" src="../_assets/dojo/dojo.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/event.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/promise.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/browser.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/ajax.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/dom-common.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/dom-extra.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/widget-common.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/widget-extra.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/form-click.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/form-select.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/layer/form-text.js"></script>
-            <script type="text/javascript" src="../_assets/frontend/index.js"></script>
-        {% endif %}
-        
-        <script>/* Google Analytics
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-35397940-1']);
-            _gaq.push(['_trackPageview']);
-
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        End Google Analytics */</script>
+        {% include footer.html %}
+        {% include scripts.html %}
+        {% include analytics.html %}
     </body>
 </html>

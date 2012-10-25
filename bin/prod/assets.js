@@ -110,7 +110,8 @@ var profile = {
         { name: "dijitive", location: "../../assets/vendor/sirprize/dijitive" },
         { name: "dobolo", location: "../../assets/vendor/sirprize/dobolo" },
         { name: "frontend", location: "../../assets/scripts" },
-        { name: "frontend-styles", location: "../../assets/styles" }
+        { name: "frontend-styles", location: "../../assets/styles" },
+        { name: "other", location: "../../assets/other" }
     ],
  
     layers: {
