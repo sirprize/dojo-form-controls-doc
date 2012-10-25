@@ -1,10 +1,10 @@
 # dijitive-doc-generator
 
-Static documentation generator infrastructure for the dijitive project - [http://sirprize.github.com/dijitive](http://sirprize.github.com/dijitive)
+Documentation generator for the dijitive project - [http://sirprize.github.com/dijitive](http://sirprize.github.com/dijitive)
 
-## Information
+## About
 
-This project was started off on the [static-dojo-site-generator](https://github.com/sirprize/static-dojo-site-generator) project.
+[static-dojo-site-generator](https://github.com/sirprize/static-dojo-site-generator) was the boilerplate and starting point for this documentation generator.
 
 ## License
 
