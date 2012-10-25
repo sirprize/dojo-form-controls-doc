@@ -1,11 +1,7 @@
 <script>
     var checkboxOnChange = function (ev) {
-        console.info('New value is: ' + this.get('value'));
+        console.info('Value is: ' + this.get('value'));
     }
 </script>
 
-<input type="checkbox" name="extraCheese" value="on" data-dojo-type="dijitive/Checkbox" data-dojo-props="onChange: checkboxOnChange"/>
-
-<script>
-    require(["dijitive/Checkbox", "dojo/parser"]);
-</script>
+<input type="checkbox" name="extraCheese" value="on" checked="checked" data-dojo-type="dijitive/Checkbox" data-dojo-props="onChange: checkboxOnChange"/>

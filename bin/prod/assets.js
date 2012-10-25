@@ -257,7 +257,7 @@ var profile = {
         "frontend/index": {
             include: [
                 "dobolo/Affix",
-                "dobolo/Scrollspy"
+                "dobolo/ScrollSpy"
             ],
             exclude: baseStuff
         }
