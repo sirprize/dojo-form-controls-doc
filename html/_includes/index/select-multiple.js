@@ -6,23 +6,24 @@ var options = [
     { value: "pasta", label: "Pasta" }
 ];
 
-var s = new Select({
+var pro1 = new Select({
     multiple: true,
-    name: 'meal2',
+    name: 'pro1',
     value: ['steak-and-lobster', 'clam-chowder'],
     options: options,
     required: true,
+    size: 3,
     onChange: function (value) {
         console.info('select.onChange(): ' + value)
     }
-}, 's');
+}, 'pro1');
 
-s.watch('value', function (prop, oldVal, val) {
+pro1.watch('value', function (prop, oldVal, val) {
     console.info('select.watch("value")', prop, oldVal, val);
 });
 
-s.watch('message', function (prop, oldVal, val) {
+pro1.watch('message', function (prop, oldVal, val) {
     console[(val) ? 'error' : 'info']('select.watch("message"):', val);
 });
 
-s.startup();
+pro1.startup();

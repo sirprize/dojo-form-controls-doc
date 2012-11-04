@@ -1,14 +1,14 @@
-var ta = new ExpandingTextarea({
-    name: 'note',
+var pro1 = new ExpandingTextarea({
+    name: 'pro1',
     uppercase: true,
     trim: true,
     onKeyPress: function (ev) {
         console.info('key pressed')
     }
-}, 'ta');
+}, 'pro1');
 
-ta.startup();
+pro1.startup();
 
-ta.watch('value', function (name, oldVal, val) {
+pro1.watch('value', function (name, oldVal, val) {
     console.info('New value is "' + val);
 });

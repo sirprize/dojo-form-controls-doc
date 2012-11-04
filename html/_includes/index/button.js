@@ -1,4 +1,4 @@
-var b = new Button({
+var pro1 = new Button({
     type: 'submit',
     'class': 'btn btn-primary',
     label: '<i class="icon-music icon-white"></i> Click Click',
@@ -6,6 +6,6 @@ var b = new Button({
         console.info('Clicked?');
         return false;
     }
-}, 'my-button');
+}, 'pro1');
 
-b.startup();
+pro1.startup();

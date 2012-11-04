@@ -1,15 +1,14 @@
-var ta = new Textarea({
-    name: 'note',
-    autocomplete: false,
+var pro1 = new Textarea({
+    name: 'pro1',
     uppercase: true,
     trim: true,
     onKeyPress: function (ev) {
         console.info('Key pressed')
     }
-}, 'ta');
+}, 'pro1');
 
-ta.startup();
+pro1.startup();
 
-ta.watch('value', function (name, oldVal, val) {
+pro1.watch('value', function (name, oldVal, val) {
     console.info('New value is "' + val);
 });

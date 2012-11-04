@@ -1,16 +1,14 @@
-var tb = new Textbox({
-    name: 'title',
-    placeHolder: 'Your title',
-    autocomplete: false,
+var pro1 = new Textbox({
+    name: 'pro1',
     uppercase: true,
     trim: true,
     onKeyPress: function (ev) {
         console.info('Key pressed')
     }
-}, 'tb');
+}, 'pro1');
 
-tb.startup();
+pro1.startup();
 
-tb.watch('value', function (name, oldVal, val) {
+pro1.watch('value', function (name, oldVal, val) {
     console.info('New value is "' + val);
 });

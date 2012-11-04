@@ -6,22 +6,22 @@ var options = [
     { value: "pasta", label: "Pasta" }
 ];
 
-var s = new Select({
-    name: 'meal1',
+var pro1 = new Select({
+    name: 'pro1',
     value: 'pasta',
     options: options,
     required: true,
     onChange: function (value) {
         console.info('select.onChange(): ' + value)
     }
-}, 's');
+}, 'pro1');
 
-s.watch('value', function (prop, oldVal, val) {
+pro1.watch('value', function (prop, oldVal, val) {
     console.info('select.watch("value")', prop, oldVal, val);
 });
 
-s.watch('message', function (prop, oldVal, val) {
+pro1.watch('message', function (prop, oldVal, val) {
     console[(val) ? 'error' : 'info']('select.watch("message"):', val);
 });
 
-s.startup();
+pro1.startup();
