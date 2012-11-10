@@ -1,6 +1,6 @@
-# dijitive-doc-generator
+# dojo-form-controls-doc
 
-Documentation generator for the dijitive project - [http://sirprize.github.com/dijitive](http://sirprize.github.com/dijitive)
+Documentation generator for the dojo-form-controls project - [http://sirprize.github.com/dojo-form-controls](http://sirprize.github.com/dojo-form-controls)
 
 ## About
 
@@ -8,4 +8,4 @@ Documentation generator for the dijitive project - [http://sirprize.github.com/d
 
 ## License
 
-dijitive-doc-generator is released under the [MIT license](http://opensource.org/licenses/mit-license.php)
+dojo-form-controls-doc is released under the [MIT license](http://opensource.org/licenses/mit-license.php)

@@ -18,12 +18,8 @@ var pro1 = new Select({
     }
 }, 'pro1');
 
-pro1.watch('value', function (prop, oldVal, val) {
-    console.info('select.watch("value")', prop, oldVal, val);
-});
-
-pro1.watch('message', function (prop, oldVal, val) {
-    console[(val) ? 'error' : 'info']('select.watch("message"):', val);
+pro1.watch('value', function (prop, old, val) {
+    console.info('select.watch("value")', prop, old, val);
 });
 
 pro1.startup();

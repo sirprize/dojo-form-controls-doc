@@ -1,11 +1,7 @@
 <script>
-    var textboxOnKeyPress = function (ev) {
-        console.info('Key pressed')
-    }
-    
     var textboxOnChange = function (value) {
         console.info('select.onChange(): ' + value)
     }
 </script>
 
-<input type="text" name="dec1" data-dojo-type="dijitive/Textbox" data-dojo-props="onKeyPress: textboxOnKeyPress, onChange: textboxOnChange, uppercase: true, trim: true"/>
+<input type="text" name="dec1" placeholder="Enter text" data-dojo-type="dojo-form-controls/Textbox" data-dojo-props="onChange: textboxOnChange"/>

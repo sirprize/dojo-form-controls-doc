@@ -1,14 +1,10 @@
 var pro1 = new Textbox({
     name: 'pro1',
-    uppercase: true,
-    trim: true,
-    onKeyPress: function (ev) {
-        console.info('Key pressed')
-    }
+    placeholder: 'Enter text'
 }, 'pro1');
 
 pro1.startup();
 
-pro1.watch('value', function (name, oldVal, val) {
+pro1.watch('value', function (name, old, val) {
     console.info('New value is "' + val);
 });

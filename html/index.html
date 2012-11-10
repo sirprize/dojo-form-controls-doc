@@ -1,19 +1,11 @@
 ---
 ---
 
-{% assign dijitButtonDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/Button.html' %}
-{% assign dijitCheckboxDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/CheckBox.html' %}
-{% assign dijitRadioDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/RadioButton.html' %}
-{% assign dijitSelectDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/Select.html' %}
-{% assign dijitTextareaDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/SimpleTextarea.html' %}
-{% assign dijitExpandingTextareaDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/Textarea.html' %}
-{% assign dijitTextboxDoc = 'http://dojotoolkit.org/reference-guide/1.8/dijit/form/TextBox.html' %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Dijitive - Dojo Dijits For Native Form Controls</title>
+        <title>dojo-form-controls - Dojo widgets for native form controls</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -21,14 +13,14 @@
         {% include html5shim.html %}
     </head>
 
-    <body>
+    <body data-dojo-type="dobolo/ScrollSpy" data-dojo-props="targetSelector: '.bs-docs-sidenav', offsetsSelector: 'section.spy', offsetTop: 70, wait: 100">
         {% include navbar.html %}
 
         <!-- Subhead -->
         <header class="jumbotron subhead" id="overview">
             <div class="container">
-                <h1>Dijitive</h1>
-                <p class="lead">Dojo Dijits For Native Form Controls.</p>
+                <h1>dojo-form-controls</h1>
+                <p class="lead">Dojo widgets for native form controls.</p>
             </div>
         </header>
 
@@ -37,13 +29,18 @@
             <!-- Docs nav -->
             <div class="row">
                 <div class="span3 bs-docs-sidebar">
-                    <ul class="nav nav-list bs-docs-sidenav">
+                    <script>
+                        var offsetTop = function () {
+                            return document.width <= 980 ? 245 : 195;
+                        }
+                    </script>
+                    
+                    <ul class="nav nav-list bs-docs-sidenav" data-dojo-type="dobolo/Affix" data-dojo-props="offsetTop: offsetTop">
                         <li><a href="#button"><i class="icon-chevron-right"></i> Button</a></li>
                         <li><a href="#checkbox"><i class="icon-chevron-right"></i> Checkbox</a></li>
                         <li><a href="#radio"><i class="icon-chevron-right"></i> Radio</a></li>
                         <li><a href="#select"><i class="icon-chevron-right"></i> Select</a></li>
                         <li><a href="#textarea"><i class="icon-chevron-right"></i> Textarea</a></li>
-                        <li><a href="#expanding-textarea"><i class="icon-chevron-right"></i> Expanding Textarea</a></li>
                         <li><a href="#textbox"><i class="icon-chevron-right"></i> Textbox</a></li>
                     </ul>
                 </div>
@@ -54,7 +51,7 @@
                     <section id="button" class="spy">
                         <div class="page-header">
                             <h1>Button</h1>
-                            <p>Representation of a native <code>{{ '<button>' | escape}}</code> element. Same API as <a href="{{ dijitButtonDoc }}">dijit/form/Button</a>.
+                            <p>Representation of a native <code>{{ '<button>' | escape}}</code> element.</p>
                         </div>
                         
                         <div class="bs-docs-example">
@@ -74,7 +71,7 @@
                     <section id="checkbox" class="spy">
                         <div class="page-header">
                             <h1>Checkbox</h1>
-                            <p>Representation of a native <code>{{ '<input type="checkbox"/>' | escape}}</code> element. Same API as <a href="{{ dijitCheckboxDoc }}">dijit/form/CheckBox</a>.</p>
+                            <p>Representation of a native <code>{{ '<input type="checkbox"/>' | escape}}</code> element.</p>
                         </div>
                         
                         <div class="bs-docs-example">
@@ -94,7 +91,7 @@
                     <section id="radio" class="spy">
                         <div class="page-header">
                             <h1>Radio</h1>
-                            <p>Representation of a native <code>{{ '<input type="radio"/>' | escape}}</code> element. Same API as <a href="{{ dijitRadioDoc }}">dijit/form/RadioButton</a>.</p>
+                            <p>Representation of a native <code>{{ '<input type="radio"/>' | escape}}</code> element.</p>
                         </div>
                         
                         <div class="bs-docs-example">
@@ -114,7 +111,7 @@
                     <section id="select" class="spy">
                         <div class="page-header">
                             <h1>Select</h1>
-                            <p>Representation of a native <code>{{ '<select>' | escape}}</code> element. Same API as <a href="{{ dijitSelectDoc }}">dijit/form/Select</a>.</p>
+                            <p>Representation of a native <code>{{ '<select>' | escape}}</code> element.</p>
                         </div>
                         
                         <div class="bs-docs-example">
@@ -146,7 +143,7 @@
                     <section id="textarea" class="spy">
                         <div class="page-header">
                             <h1>Textarea</h1>
-                            <p>Representation of a native <code>{{ '<textarea>' | escape}}</code> element. Same API as <a href="{{ dijitTextareaDoc }}">dijit/form/SimpleTextarea</a>.</p>
+                            <p>Representation of a native <code>{{ '<textarea>' | escape}}</code> element.</p>
                         </div>
                         
                         <div class="bs-docs-example">
@@ -162,31 +159,11 @@
                         <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
                     </section>
                     
-                    <!-- ExpandingTextarea -->
-                    <section id="expanding-textarea" class="spy">
-                        <div class="page-header">
-                            <h1>ExpandingTextarea</h1>
-                            <p>Representation of a native <code>{{ '<textarea>' | escape}}</code> element. Same API as <a href="{{ dijitExpandingTextareaDoc }}">dijit/form/Textarea</a>.</p>
-                        </div>
-                        
-                        <div class="bs-docs-example">
-                            {% include index/expanding-textarea.html %}
-                        </div>
-                        
-                        <h3>Declarative</h3>
-                        {% capture snippet %}{% include index/expanding-textarea.html %}{% endcapture %}
-                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
-
-                        <h3>Programmatic</h3>
-                        {% capture snippet %}{% include index/expanding-textarea.js %}{% endcapture %}
-                        <pre class="prettyprint linenums">{{ snippet | escape }}</pre>
-                    </section>
-                    
                     <!-- Textbox -->
                     <section id="textbox" class="spy">
                         <div class="page-header">
                             <h1>Textbox</h1>
-                            <p>Representation of a native <code>{{ '<input type="text">' | escape}}</code> element. Same API as <a href="{{ dijitTextboxDoc }}">dijit/form/TextBox</a>.</p>
+                            <p>Representation of a native <code>{{ '<input type="text">' | escape}}</code> element.</p>
                         </div>
                         
                         <div class="bs-docs-example">

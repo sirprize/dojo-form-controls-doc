@@ -1,4 +1,4 @@
-<select name="dec1" multiple="true" data-dojo-type="dijitive/Select" required="true" size="3">
+<select name="dec1" multiple="true" data-dojo-type="dojo-form-controls/Select" required="true" size="3">
     <option value="">Please select</option>
     <option value="steak-and-lobster" selected="selected">Steak &amp; Lobster</option>
     <option value="clam-chowder" selected="selected">Clam Chowder</option>
@@ -8,11 +8,7 @@
         console.info('select.onChange(): ' + value);
     </script>
     
-    <script type="dojo/watch" data-dojo-prop="value" data-dojo-args="prop, oldVal, val">
-        console.info('select.watch("value")', prop, oldVal, val);
-    </script>
-    
-    <script type="dojo/watch" data-dojo-prop="message" data-dojo-args="prop, oldVal, val">
-        console[(val) ? 'error' : 'info']('select.watch("message"):', val);
+    <script type="dojo/watch" data-dojo-prop="value" data-dojo-args="prop, old, val">
+        console.info('select.watch("value")', prop, old, val);
     </script>
 </select>

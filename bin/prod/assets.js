@@ -52,28 +52,23 @@ var domExtraStuff = [
     "dojo/query"
 ];
 
-var widgetCommonStuff = [
-    "dijit/_TemplatedMixin"
+var mijitStuff = [
+    "mijit/_TemplatedMixin",
+    "mijit/_WidgetBase",
+    "mijit/_WidgetsInTemplateMixin",
+    "mijit/Destroyable",
+    "mijit/main",
+    "mijit/registry"
 ];
 
-var widgetExtraStuff = [
-    "dijit/_Widget"
-];
-
-var formClickStuff = [
-    "dijitive/Button",
-    "dijitive/Checkbox",
-    "dijitive/Option",
-    "dijitive/Radio"
-];
-
-var formSelectStuff = [
-    "dijitive/Select"
-];
-
-var formTextStuff = [
-    "dijitive/Textarea",
-    "dijitive/Textbox"
+var formStuff = [
+    "dojo-form-controls/Button",
+    "dojo-form-controls/Checkbox",
+    "dojo-form-controls/Option",
+    "dojo-form-controls/Radio",
+    "dojo-form-controls/Select",
+    "dojo-form-controls/Textarea",
+    "dojo-form-controls/Textbox"
 ];
 
 var baseStuff = noopStuff.concat(
@@ -83,11 +78,8 @@ var baseStuff = noopStuff.concat(
     ajaxStuff,
     domCommonStuff,
     domExtraStuff,
-    widgetCommonStuff,
-    widgetExtraStuff,
-    formClickStuff,
-    formSelectStuff,
-    formTextStuff
+    mijitStuff,
+    formStuff
 );
 
 
@@ -106,8 +98,8 @@ var profile = {
     selectorEngine: "acme",
     packages:[
         { name: "dojo", location: "../../assets/vendor/dojo/dojo" },
-        { name: "dijit", location: "../../assets/vendor/dojo/dijit" },
-        { name: "dijitive", location: "../../assets/vendor/sirprize/dijitive" },
+        { name: "mijit", location: "../../assets/vendor/sirprize/mijit" },
+        { name: "dojo-form-controls", location: "../../assets/vendor/sirprize/dojo-form-controls" },
         { name: "dobolo", location: "../../assets/vendor/sirprize/dobolo" },
         { name: "frontend", location: "../../assets/scripts" },
         { name: "frontend-styles", location: "../../assets/styles" },
@@ -190,8 +182,8 @@ var profile = {
                 domCommonStuff
             )
         },
-        "frontend/layer/widget-common": {
-            include: widgetCommonStuff,
+        "frontend/layer/mijit": {
+            include: mijitStuff,
             exclude: noopStuff.concat(
                 eventStuff,
                 promiseStuff,
@@ -201,8 +193,8 @@ var profile = {
                 domExtraStuff
             )
         },
-        "frontend/layer/widget-extra": {
-            include: widgetExtraStuff,
+        "frontend/layer/form": {
+            include: formStuff,
             exclude: noopStuff.concat(
                 eventStuff,
                 promiseStuff,
@@ -210,49 +202,7 @@ var profile = {
                 ajaxStuff,
                 domCommonStuff,
                 domExtraStuff,
-                widgetCommonStuff
-            )
-        },
-        "frontend/layer/form-click": {
-            include: formClickStuff,
-            exclude: noopStuff.concat(
-                eventStuff,
-                promiseStuff,
-                browserStuff,
-                ajaxStuff,
-                domCommonStuff,
-                domExtraStuff,
-                widgetCommonStuff,
-                widgetExtraStuff
-            )
-        },
-        "frontend/layer/form-select": {
-            include: formSelectStuff,
-            exclude: noopStuff.concat(
-                eventStuff,
-                promiseStuff,
-                browserStuff,
-                ajaxStuff,
-                domCommonStuff,
-                domExtraStuff,
-                widgetCommonStuff,
-                widgetExtraStuff,
-                formClickStuff
-            )
-        },
-        "frontend/layer/form-text": {
-            include: formTextStuff,
-            exclude: noopStuff.concat(
-                eventStuff,
-                promiseStuff,
-                browserStuff,
-                ajaxStuff,
-                domCommonStuff,
-                domExtraStuff,
-                widgetCommonStuff,
-                widgetExtraStuff,
-                formClickStuff,
-                formSelectStuff
+                mijitStuff
             )
         },
         "frontend/index": {
