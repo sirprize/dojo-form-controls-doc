@@ -1,9 +1,9 @@
-[submodule "assets/vendor/dojo/dojo"]
-	path = assets/vendor/dojo/dojo
-	url = git://github.com/dojo/dojo.git
-[submodule "assets/vendor/dojo/util"]
-	path = assets/vendor/dojo/util
-	url = git://github.com/dojo/util.git
+[submodule "assets/vendor/dojo/dojo-oldmirror"]
+	path = assets/vendor/dojo/dojo-oldmirror
+	url = git://github.com/dojo/dojo-oldmirror.git
+[submodule "assets/vendor/dojo/util-oldmirror"]
+	path = assets/vendor/dojo/util-oldmirror
+	url = git://github.com/dojo/util-oldmirror.git
 [submodule "assets/vendor/twitter/bootstrap"]
 	path = assets/vendor/twitter/bootstrap
 	url = git://github.com/twitter/bootstrap.git
@@ -16,3 +16,9 @@
 [submodule "assets/vendor/sirprize/dojo-form-controls"]
 	path = assets/vendor/sirprize/dojo-form-controls
 	url = git://github.com/sirprize/dojo-form-controls.git
+[submodule "assets/vendor/dojo/dojo"]
+	path = assets/vendor/dojo/dojo
+	url = git://github.com/dojo/dojo.git
+[submodule "assets/vendor/dojo/util"]
+	path = assets/vendor/dojo/util
+	url = git://github.com/dojo/util.git
