@@ -11,6 +11,7 @@ var pro1 = new Select({
     value: 'clam-chowder',
     options: options,
     required: true,
+    'class': 'form-control',
     onChange: function (value) {
         console.info('select.onChange(): ' + value)
     }

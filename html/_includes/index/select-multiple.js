@@ -13,6 +13,7 @@ var pro1 = new Select({
     options: options,
     required: true,
     size: 3,
+    'class': 'form-control',
     onChange: function (value) {
         console.info('select.onChange(): ' + value)
     }

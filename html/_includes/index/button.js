@@ -1,7 +1,7 @@
 var pro1 = new Button({
     type: 'submit',
-    'class': 'btn btn-primary',
-    label: '<i class="icon-music icon-white"></i> Click Click',
+    'class': 'btn btn-success',
+    label: '<span class="glyphicon glyphicon-music"></span> Click Click',
     onClick: function (e) {
         console.info('Clicked?');
         return false;

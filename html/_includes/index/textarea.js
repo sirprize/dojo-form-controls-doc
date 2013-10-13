@@ -1,6 +1,7 @@
 var pro1 = new Textarea({
     name: 'pro1',
-    value: 'Some text'
+    value: 'Some text',
+    'class': 'form-control'
 }, 'pro1');
 
 pro1.startup();

@@ -7,7 +7,31 @@
 // http://dojotoolkit.org/reference-guide/1.8/build/localizationExample.html
 
 
-var noopStuff = [];
+var noopStuff = [
+    //"dojo/main"
+    "dojo/sniff",
+    "dojo/has",
+    "dojo/_base/array",
+    //"dojo/_base/browser",
+    "dojo/_base/config",
+    //"dojo/_base/connect",
+    "dojo/_base/declare",
+    //"dojo/_base/Deferred",
+    //"dojo/_base/event",
+    //"dojo/_base/fx",
+    //"dojo/_base/html",
+    //"dojo/_base/json",
+    "dojo/_base/kernel",
+    "dojo/_base/lang",
+    //"dojo/_base/loader",
+    //"dojo/_base/NodeList",
+    //"dojo/_base/query",
+    //"dojo/_base/sniff",
+    //"dojo/_base/unload",
+    //"dojo/_base/url",
+    //"dojo/_base/window",
+    //"dojo/_base/xhr"
+];
 
 var eventStuff = [
     "dojo/_base/connect",
@@ -71,6 +95,13 @@ var formStuff = [
     "dojo-form-controls/Textbox"
 ];
 
+var doboloStuff = [
+    "dobolo/Affix",
+    "dobolo/ScrollSpy",
+    "dobolo/ScrollTopSpyHelper",
+    "dobolo/Util"
+];
+
 var baseStuff = noopStuff.concat(
     eventStuff,
     promiseStuff,
@@ -79,7 +110,8 @@ var baseStuff = noopStuff.concat(
     domCommonStuff,
     domExtraStuff,
     mijitStuff,
-    formStuff
+    formStuff,
+    doboloStuff
 );
 
 
@@ -111,106 +143,11 @@ var profile = {
         // it is actually just plain JavaScript. There is some extra magic in the build system specifically for this
         // module ID.
         "dojo/dojo": {
-            include: [
-                //"dojo/main"
-                "dojo/sniff",
-                "dojo/has",
-                "dojo/_base/array",
-                //"dojo/_base/browser",
-                "dojo/_base/config",
-                //"dojo/_base/connect",
-                "dojo/_base/declare",
-                //"dojo/_base/Deferred",
-                //"dojo/_base/event",
-                //"dojo/_base/fx",
-                //"dojo/_base/html",
-                //"dojo/_base/json",
-                "dojo/_base/kernel",
-                "dojo/_base/lang",
-                //"dojo/_base/loader",
-                //"dojo/_base/NodeList",
-                //"dojo/_base/query",
-                //"dojo/_base/sniff",
-                //"dojo/_base/unload",
-                //"dojo/_base/url",
-                //"dojo/_base/window",
-                //"dojo/_base/xhr"
-            ],
+            include: baseStuff,
             // By default, the build system will try to include dojo/main in the built dojo/dojo layer, which adds a
             // bunch of stuff we don’t want or need. We want the initial script load to be as small and quick as
             // possible, so we configure it as a custom, bootable base.
             customBase: true
-        },
-        "frontend/layer/event": {
-            include: eventStuff
-        },
-        "frontend/layer/promise": {
-            include: promiseStuff,
-            exclude: noopStuff.concat(eventStuff)
-        },
-        "frontend/layer/browser": {
-            include: browserStuff,
-            exclude: noopStuff.concat(
-                eventStuff,
-                promiseStuff
-            )
-        },
-        "frontend/layer/ajax": {
-            include: ajaxStuff,
-            exclude: noopStuff.concat(
-                eventStuff,
-                promiseStuff,
-                browserStuff
-            )
-        },
-        "frontend/layer/dom-common": {
-            include: domCommonStuff,
-            exclude: noopStuff.concat(
-                eventStuff,
-                promiseStuff,
-                browserStuff,
-                ajaxStuff
-            )
-        },
-        "frontend/layer/dom-extra": {
-            include: domExtraStuff,
-            exclude: noopStuff.concat(
-                eventStuff,
-                promiseStuff,
-                browserStuff,
-                ajaxStuff,
-                domCommonStuff
-            )
-        },
-        "frontend/layer/mijit": {
-            include: mijitStuff,
-            exclude: noopStuff.concat(
-                eventStuff,
-                promiseStuff,
-                browserStuff,
-                ajaxStuff,
-                domCommonStuff,
-                domExtraStuff
-            )
-        },
-        "frontend/layer/form": {
-            include: formStuff,
-            exclude: noopStuff.concat(
-                eventStuff,
-                promiseStuff,
-                browserStuff,
-                ajaxStuff,
-                domCommonStuff,
-                domExtraStuff,
-                mijitStuff
-            )
-        },
-        "frontend/index": {
-            include: [
-                "dobolo/Affix",
-                "dobolo/ScrollSpy"
-            ],
-            exclude: baseStuff
         }
     },
 
