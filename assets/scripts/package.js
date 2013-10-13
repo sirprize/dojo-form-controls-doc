@@ -1,8 +1,7 @@
 var profile = (function () {
 
     var miniExcludes = {
-            "frontend/package": 1,
-            "frontend/bootstrap-docs-application": 1
+            "frontend/package": 1
         },
         amdExcludes = {},
         isTestRe = /\/test\//
