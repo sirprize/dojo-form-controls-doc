@@ -16,3 +16,9 @@
 [submodule "assets/vendor/sirprize/dobolo"]
 	path = assets/vendor/sirprize/dobolo
 	url = https://github.com/sirprize/dobolo.git
+[submodule "assets/vendor/scottjehl/Respond"]
+	path = assets/vendor/scottjehl/Respond
+	url = https://github.com/scottjehl/Respond.git
+[submodule "assets/vendor/aFarkas/html5shiv"]
+	path = assets/vendor/aFarkas/html5shiv
+	url = https://github.com/aFarkas/html5shiv.git
